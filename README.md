@@ -19,7 +19,7 @@ This project enables displaying large digits using bitmap fonts with the [LVGL](
 - Each digit is rendered using a bitmap image instead of a standard font.
 - Full zoom support: scale digits from 0% to undefined %.
 - Decimal point and unit symbols are displayed using separate images.
-- Screen snapshot functionality (`screenshot.bmp`).
+
 
   Micropython as a means of creating embedded system programs is becoming increasingly popular and gaining popularity. Often the limiting factor is the size of the operating memory or flash memory. Therefore, various images of the micropython system often have limited functionality by omitting some functions. Very often these are image and letter fonts that take up a lot of memory. Such a case is the image of micropython used for the popular esp32 series microcomputer in combination with the LVGL library.The described library helps solve this problem and the illustrative image shows a screen of a laboratory source using this library.
 
