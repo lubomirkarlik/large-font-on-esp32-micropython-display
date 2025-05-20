@@ -21,7 +21,5 @@ displays[3].set_zoom(64)   # 25% zoom
 # Update displays with values
 large_fonts.refresh_digit_displays(displays, 1234, 5678, 9012, 3456)
 
-import snapshot
 
-snapshot.take_screenshot("/screenshot.bmp")
 
