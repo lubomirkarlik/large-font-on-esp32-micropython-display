@@ -1,7 +1,7 @@
 
 # Large Digit Display for LVGL (ESP32 / MicroPython)
 
-This project enables displaying large digits using bitmap fonts with the [LVGL](https://lvgl.io/) graphics library, suitable for embedded devices like the ESP32 with a display (e.g., 5" Elecrow LCD). Following pistures show screenshot from example script large_digits.py (first one), and from real project of power source for laboratory used this LCD display.
+This project enables displaying large digits using bitmap fonts with the [LVGL](https://lvgl.io/) graphics library, suitable for embedded devices like the ESP32 with a display (e.g., 5" Elecrow LCD). Following pistures show screenshot from example script large_digits.py (first one), and from real project of power source for laboratory (second one) used this LCD display.
 
 ![Screenshot](screenshot.png) 
 ![LK-20](screenshot2.png) 
