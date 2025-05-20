@@ -16,7 +16,7 @@ This project enables displaying large digits using bitmap fonts with the [LVGL](
 
 - Display of four numeric values in the format `12.34 V` or `56.78 A`.
 - Each digit is rendered using a bitmap image instead of a standard font.
-- Full zoom support: scale digits from 25% to 200%.
+- Full zoom support: scale digits from 0% to undefined %.
 - Decimal point and unit symbols are displayed using separate images.
 - Screen snapshot functionality (`screenshot.bmp`).
 
@@ -34,7 +34,7 @@ import large_digits
 ## 🧠 Requirements
 
 - [LVGL for MicroPython](https://github.com/lvgl/lv_binding_micropython)
-- A compatible display (e.g., Elecrow 7" DIS07050H)
+- A compatible display (e.g., Elecrow 5" DIS07050H) - tested
 - MicroPython build with support for `lvgl`, `framebuf`, `os`, `gc`
 
 ## 🖼️ BMP Image Format
@@ -57,9 +57,9 @@ import large_digits
 | Bottom Left    | 90.12 | A    | 50%   |
 | Bottom Right   | 34.56 | A    | 25%   |
 
-## 📷 Screenshot
+## 📄 Libraray documentation
 
-A screenshot is automatically saved to `screenshot.bmp` after rendering.
+- description of classes, functions, attributes is decribed in large_fonts_doc.md file.
 
 ## 📄 License
 
