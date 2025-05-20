@@ -59,7 +59,7 @@ import large_digits
 
 ## 📄 Libraray documentation
 
-- description of classes, functions, attributes is decribed in [large_fonts_doc.md](arge_fonts_doc.md) file.
+- description of classes, functions, attributes is decribed in [large_fonts_doc.md](large_fonts_doc.md) file.
 
 ## 📄 License
 
