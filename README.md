@@ -3,7 +3,7 @@
 
 This project enables displaying large digits using bitmap fonts with the [LVGL](https://lvgl.io/) graphics library, suitable for embedded devices like the ESP32 with a display (e.g., 5" Elecrow LCD).
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot.png) [LK-20](LK-20)
 
 ## 📦 Project Contents
 
