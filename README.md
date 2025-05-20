@@ -11,7 +11,7 @@ This project enables displaying large digits using bitmap fonts with the [LVGL](
 - `large_fonts.py` – Library for managing and rendering bitmap digits with zoom support.
 - `large_digits.py` – Main application script that initializes the display, creates four digit displays, and shows sample values.
 - `*.bmp` files – Bitmap images for each digit and symbol (`0`–`9`, `,`, `V`, `A`).
-- `snapshot.py` – Optional module for saving LVGL screen snapshots.
+
 
 ## ⚙️ Features and descriptions
 
