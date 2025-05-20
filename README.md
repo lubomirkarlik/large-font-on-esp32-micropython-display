@@ -15,7 +15,7 @@ This project enables displaying large digits using bitmap fonts with the [LVGL](
 
 ## ⚙️ Features and descriptions
 
-- Display of four numeric values in the format `12.34 V` or `56.78 A`.
+- Display of four numeric values in the format `12.34 V` or `56.78 A`. (example)
 - Each digit is rendered using a bitmap image instead of a standard font.
 - Full zoom support: scale digits from 0% to undefined %.
 - Decimal point and unit symbols are displayed using separate images.
@@ -64,6 +64,7 @@ import large_digits
 
 - Spacing, units, and zoom can be adjusted via parameters in the `DigitDisplay` class.
 - Additional characters can be added by extending the `digit_files` dictionary in `large_fonts.py` and providing matching `.bmp` images.
+- easy way for adopt to another type of displays modifying display.py library containing display drivers, touch screen and LVGL initialization.
 
 ## 🧪 Example Output Values
 
