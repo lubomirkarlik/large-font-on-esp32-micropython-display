@@ -78,6 +78,6 @@ import large_digits
 
 - description of classes, functions, attributes is decribed in [large_fonts_doc.md](large_fonts_doc.md) file.
 
-## 📄 License
+## 📄 Disclaimers and license
 
-This project is open-source. You may use and modify it freely. Provide your own bitmap images for custom fonts or symbols.
+This project is open-source. You may use and modify it freely. Provide your own bitmap images for custom fonts or symbols. You may use the program as is at your own risk, no updates or modifications to the code will be made, no planed, and no warranties or claims for damages will be made in connection with any use of this code.
