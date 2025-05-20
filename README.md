@@ -1,7 +1,7 @@
 
 # Large Digit Display for LVGL (ESP32 / MicroPython)
 
-This project enables displaying large digits using bitmap fonts with the [LVGL](https://lvgl.io/) graphics library, suitable for embedded devices like the ESP32 with a display (e.g., 5" Elecrow LCD).
+This project enables displaying large digits using bitmap fonts with the [LVGL](https://lvgl.io/) graphics library, suitable for embedded devices like the ESP32 with a display (e.g., 5" Elecrow LCD). Following pistures show screenshot from example script large_digits.py (first one), and from real project of power source for laboratory used this LCD display.
 
 ![Screenshot](screenshot.png) 
 ![LK-20](screenshot2.png) 
@@ -13,13 +13,29 @@ This project enables displaying large digits using bitmap fonts with the [LVGL](
 - `*.bmp` files – Bitmap images for each digit and symbol (`0`–`9`, `,`, `V`, `A`).
 - `snapshot.py` – Optional module for saving LVGL screen snapshots.
 
-## ⚙️ Features
+## ⚙️ Features and descriptions
 
 - Display of four numeric values in the format `12.34 V` or `56.78 A`.
 - Each digit is rendered using a bitmap image instead of a standard font.
 - Full zoom support: scale digits from 0% to undefined %.
 - Decimal point and unit symbols are displayed using separate images.
 - Screen snapshot functionality (`screenshot.bmp`).
+
+  Micropython as a means of creating embedded system programs is becoming increasingly popular and gaining popularity. Often the limiting factor is the size of the operating memory or flash memory. Therefore, various images of the micropython system often have limited functionality by omitting some functions. Very often these are image and letter fonts that take up a lot of memory. Such a case is the image of micropython used for the popular esp32 series microcomputer in combination with the LVGL library.The described library helps solve this problem and the illustrative image shows a screen of a laboratory source using this library.
+
+I based my research on the following criteria:
+- minimum possible need for operating memory
+- minimum possible consumption of program memory (flash or sd card)
+- good ability to redraw the screen
+- minimize flicker
+- possibility of enlarging, reducing characters
+- possibility of combining any fonts and symbols
+
+Solution :
+
+  I used a method where the displayed characters are images. Each character is a BMP image. The image must be 24 bit, otherwise the LVGL library cannot import it. I chose images of 50x96 points. whose size is around 10kB. With large displayed characters, the number of them on the screen that can be meaningfully placed is limited anyway, so in the function def _load_digit_images(self) I defined the characters and the corresponding bmp files that will be displayed somewhere on the screen. The number of loaded images can be changed arbitrarily. Each image is loaded into memory only once. But we need to display it x times in different places.  For this purpose, I used the lvgl.scr_load() function call, which creates an image object, but only using a reference to an already loaded BMP image, which significantly saves RAM. For each displayed position, I loaded images into the pool that could potentially be required for display at that position. Now, all I need to do is swap the images at that position. It's simple, but slow and the display refresh "flashes terribly". The solution is that all characters are loaded into a pile at that position and those that are not currently displayed are shifted to a position outside the display area, which is fast and efficient and can be done simply by calling the lvgl.img.set_offset_x() function. To optimize speed, only characters where a change is required are redrawn on the screen. This approach allows for fast changes (about 40 large image characters on the screen per second). Another advantage is the ability to enlarge or reduce the loops and thus achieve the display of any character size.
+
+     The disadvantage of this approach is that we are manipulating BMP images that have a fixed foreground and background color, so changing the background transparency or the color of the characters or background by changing the LVGL attributes is not possible.
 
 ## 🚀 Getting Started
 
